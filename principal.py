@@ -1,8 +1,5 @@
 from datetime import datetime
-import controladores
-import controladores.criar_conta
-import controladores.listar_contas
-
+from controladores import criar_conta, excluir_conta, listar_contas
 
 opcoes_menu = [
     "1 - Listar contas",
@@ -24,17 +21,18 @@ def iniciar_menu():
         match opcao_escolhida:
             case '1':
                 print("\n ** LISTAR CONTAS ** \n")
-                controladores.listar_contas.executar()
+                listar_contas.executar()
                 #...
             case '2':
                 print("\n ** CRIAR UMA NOVA CONTA ** \n")
-                controladores.criar_conta.executar()
+                criar_conta.executar()
                 #...
             case '3':
                 print("\n ** ATUALIZAR UMA CONTA ** \n")
                 #...
             case '4':
                 print("\n ** EXCLUIR UMA CONTA ** \n")
+                excluir_conta.executar()
                 #...
             case '5':
                 print("\n ** PROGRAMA ENCERRADO  ** \n")
