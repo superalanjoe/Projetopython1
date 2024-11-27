@@ -1,0 +1,2 @@
+id, descricao, valor, tipo, data vencimento, data recebimento, categoria, status
+1, conta do AP, 200, débito, 11/20/2024, 11/30/2024, conta de luz, pendente

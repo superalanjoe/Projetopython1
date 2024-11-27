@@ -3,6 +3,7 @@ import controladores
 import controladores.criar_conta
 import controladores.listar_contas
 
+
 opcoes_menu = [
     "1 - Listar contas",
     "2 - Criar conta",
