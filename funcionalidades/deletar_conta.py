@@ -7,6 +7,7 @@ def executar(id_conta):
     for conta in contas:
         if conta.get("id") == id_conta:
             conta_encontrada = conta
+            break
 
     if conta_encontrada is None:
         print(f"Nenhuma conta foi encontrada com o ID {id_conta}")

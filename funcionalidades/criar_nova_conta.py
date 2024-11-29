@@ -9,8 +9,11 @@ def executar():
     tipo = solicitar_tipo.executar("Qual é o tipo? (d = débito, c = crédito) ")
     categoria = input("Qual é a categoria? ")
     data_vencimento = validar_data.executar(input("Qual é a data de vencimento? (DD/MM/YYYY) "))
-    data_pagamento = validar_data.executar(input("Qual é a data de pagamento? (DD/MM/YYYY) "))
     status = solicitar_status.executar()
+    data_pagamento = input("Qual é a data de pagamento? (DD/MM/YYYY) ")
+
+    if status == "pago":
+        data_pagamento = validar_data.executar(data_pagamento)
 
     nova_conta = {
         "id": obter_proximo_id_conta.executar(),

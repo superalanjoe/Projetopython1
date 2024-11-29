@@ -8,10 +8,6 @@ opcao_tipo = {
 }
 
 def executar():
-    """
-        - solicitar o filtro
-        - chamar a funcionalidade
-    """
     tipo = obter_tipo()
     funcionalidades.listar_contas_por_tipo.executar(tipo=tipo)
 
