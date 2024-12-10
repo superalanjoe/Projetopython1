@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1{
+            color: #4CAF50;
+            width: 100%;
+            text-align: center;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th,td {
+            padding: 10px;
+            text-align: center;
+        }
+        th{
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ titulo }}</h1>
+    <p>Total crédito: {{valor_total_credito}}</p>
+    <p>Total débito: {{valor_total_debito}}</p>
+    <p>Quantidade pago: {{quantidade_pago}}</p>
+    <p>Quantidade pendente: {{quantidade_pendente}}</p>
+    <p>Quantidade cancelado: {{quantidade_cancelado}}</p>
+    <p><strong>Total: {{valor_total}}</strong></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>Categoria</th>
+                <th>Status</th>
+                <th>Data vencimento</th>
+                <th>Data pagamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for conta in contas %}
+            <tr>
+                <td>{{conta.id}}</td>
+                <td>{{conta.descricao}}</td>
+                <td>{{conta.valor}}</td>
+                <td>{{conta.tipo}}</td>
+                <td>{{conta.categoria}}</td>
+                <td>{{conta.status}}</td>
+                <td>{{conta.data_vencimento}}</td>
+                <td>{{conta.data_pagamento}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

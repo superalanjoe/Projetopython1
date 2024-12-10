@@ -1,12 +1,20 @@
 from datetime import datetime
-from controladores import criar_conta, excluir_conta, listar_contas
+from controladores import (
+    criar_conta, 
+    excluir_conta, 
+    listar_contas, 
+    atualizar_conta,
+    gerar_relatorio
+)
+from os import system
 
 opcoes_menu = [
     "1 - Listar contas",
     "2 - Criar conta",
     "3 - Atualizar conta",
     "4 - Excluir conta",
-    "5 - Encerrar",
+    "5 - Gerar relatório de um mês",
+    "6 - Encerrar",
 ]
 
 def iniciar_menu():
@@ -29,12 +37,16 @@ def iniciar_menu():
                 #...
             case '3':
                 print("\n ** ATUALIZAR UMA CONTA ** \n")
+                atualizar_conta.executar()
                 #...
             case '4':
                 print("\n ** EXCLUIR UMA CONTA ** \n")
                 excluir_conta.executar()
                 #...
             case '5':
+                print("\n ** GERAÇÃO DE RELATÓRIO  ** \n")
+                gerar_relatorio.executar()
+            case '6':
                 print("\n ** PROGRAMA ENCERRADO  ** \n")
                 break
                 #...
@@ -42,5 +54,6 @@ def iniciar_menu():
                 print("\n OPÇÃO INVÁLIDA \n")
 
 if __name__ == "__main__":
+    system('clear')
     print("\n" + datetime.now().strftime("%d/%m/%Y, %H:%M"))
     iniciar_menu()
